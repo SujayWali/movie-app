@@ -3,9 +3,26 @@ import {data} from "../data";
 import Navbar from "./Navbar";
 import MovieCard from "./MovieCard";
 
-function App() {
-  return (
-    <div className="App">
+class App extends React.Component {
+  componentDidMount(){
+    const {store} = this.props;
+    store.subscribe(()=>{
+      console.log('UPDATED');
+      this.forceUpdate();
+    })
+    //make api call
+    //dispatch Action
+    store.dispatch({
+      type:'ADD_MOVIES',
+      movies: data
+    });
+    console.log('STATE',this.props.store.getState());
+  }
+  render() {
+    
+    const movies = this.props.store.getState();
+    return (
+      <div className="App">
         <Navbar />
         <div className="main">
           <div className="tabs">
@@ -15,15 +32,16 @@ function App() {
           </div>
 
           <div className="list">
-            {data.map(movie => (
-              <MovieCard movie = {movie} />
+            {movies.map((movie, index) => (
+              <MovieCard movie={movie} key={'movies-${index}'} />
             ))}
           </div>
 
 
         </div>
-    </div>
-  );
+      </div>
+    );
+  }
 }
 
 export default App;
