@@ -1,6 +1,7 @@
 import React from "react";
 import { render } from "react-dom";
 import { addFavourite, removeFromFavourites } from "../actions"
+
  
 class MovieCard extends React.Component {
 
