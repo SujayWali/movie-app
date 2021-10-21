@@ -186,13 +186,35 @@ body {
 
 
 .search-results{
-  margin-top: -20px;
+  margin-top: 1px;
   flex: 1;
 }
 
 .search-results img{
   height: 100px;
 }
+
+.movie-info span {
+  padding: 10px 20px;
+  margin-left: 20px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.movie-info button {
+  font-size: 15px;
+  padding: 7px 10px;
+  text-shadow: none;
+  border-radius: 3px;
+  border: none;
+  font-weight: 600;
+  margin-top: 30px;
+  margin-left: 40px;
+  background-color: #029827;
+  color: #fff;
+  display: flex;
+}
+
 
 .footer {
   position: absolute;

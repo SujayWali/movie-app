@@ -41,7 +41,7 @@ class Navbar extends React.Component {
                     <button id="search-btn" onClick={this.handleSearch}>Search</button>
                    
                     {showSearchResults &&     
-                        <div className="search-results">
+                        
                             <div className="search-results">
                                 <img src={movie.Poster} alt="search-pic" />
 
@@ -52,7 +52,7 @@ class Navbar extends React.Component {
                                      </button>
                                 </div>
                                 </div>
-                            </div>
+                           
                     }
                 </div>
 
